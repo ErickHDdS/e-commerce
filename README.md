@@ -17,4 +17,4 @@ This project is protected by [copyright law](https://en.wikipedia.org/wiki/Copyr
 ## Developed by 
 [Erick Henrique](https://github.com/ErickHDdS) <br />
 [Júlia Nunes](https://github.com/Julia-Nunes) <br />
-[Gabriel Schmidt]() <br />
+[Gabriel Schmidt](https://github.com/zgabrielschmidt) <br />

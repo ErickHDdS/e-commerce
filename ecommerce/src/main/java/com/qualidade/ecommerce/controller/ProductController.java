@@ -1,12 +1,13 @@
 package com.qualidade.ecommerce.controller;
 
-import com.qualidade.ecommerce.model.Product;
-import com.qualidade.ecommerce.service.ProductService;
+import javax.validation.constraints.NotNull;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.constraints.NotNull;
+import com.qualidade.ecommerce.model.Product;
+import com.qualidade.ecommerce.service.ProductService;
 
 @RestController
 @RequestMapping("/api/products")

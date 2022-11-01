@@ -1,10 +1,11 @@
 package com.qualidade.ecommerce.service;
 
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.qualidade.ecommerce.exception.ResourceNotFoundException;
 import com.qualidade.ecommerce.model.Product;
 import com.qualidade.ecommerce.repository.ProductRepository;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
@@ -24,8 +25,8 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product getProduct(long id) {
         return productRepository
-                .findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Product not found"));
+          .findById(id)
+          .orElseThrow(() -> new ResourceNotFoundException("Product not found"));
     }
 
     @Override

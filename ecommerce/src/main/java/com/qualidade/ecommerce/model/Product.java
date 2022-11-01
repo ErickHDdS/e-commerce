@@ -10,7 +10,6 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "Product name is required.")
     @Basic(optional = false)
     private String name;
 
@@ -18,7 +17,8 @@ public class Product {
 
     private String description;
 
-    public Product(Long id, @NotNull(message = "Product name is required.") String name, Double value, String description) {
+    public Product(Long id, @NotNull(message = "Product name is required.") String name, Double value,
+            String description) {
         this.id = id;
         this.name = name;
         this.value = value;

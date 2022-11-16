@@ -85,8 +85,6 @@ public class Address {
             }
         }
 
-        System.out.println(logradouro);
-
         this.setStreet(logradouro);
         this.setNeighborhood(bairro);
         this.setDistrict(localidade);

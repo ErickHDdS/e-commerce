@@ -1,4 +1,4 @@
-package com.qualidade.application.entities;
+package com.qualidade.application.utils;
 
 import java.io.IOException;
 

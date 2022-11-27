@@ -33,11 +33,9 @@ public class Address {
         this.complement = complement;
 
         this.executeCEPAPI(cep);
-
     }
 
     public Address() {
-
     }
 
     public void executeCEPAPI(int cep) throws IOException {

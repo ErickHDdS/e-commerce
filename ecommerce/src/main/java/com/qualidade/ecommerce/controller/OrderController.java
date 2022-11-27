@@ -36,7 +36,8 @@ public class OrderController {
     OrderService orderService;
     OrderProductService orderProductService;
 
-    public OrderController(ProductService productService, OrderService orderService, OrderProductService orderProductService) {
+    public OrderController(ProductService productService, OrderService orderService,
+            OrderProductService orderProductService) {
         this.productService = productService;
         this.orderService = orderService;
         this.orderProductService = orderProductService;
@@ -53,14 +54,14 @@ public class OrderController {
         List<OrderProductDto> formDtos = form.getProductOrders();
         validateProductsExistence(formDtos);
         Order order = new Order();
-        order.setStatus(OrderStatus.PAID.name());
+        order.setStatus(OrderStatus.PAID);
         order = this.orderService.create(order);
 
         List<OrderProduct> orderProducts = new ArrayList<>();
         for (OrderProductDto dto : formDtos) {
             orderProducts.add(orderProductService.create(new OrderProduct(order, productService.getProduct(dto
-              .getProduct()
-              .getId()), dto.getQuantity())));
+                    .getProduct()
+                    .getId()), dto.getQuantity())));
         }
 
         order.setOrderProducts(orderProducts);
@@ -68,10 +69,10 @@ public class OrderController {
         this.orderService.update(order);
 
         String uri = ServletUriComponentsBuilder
-          .fromCurrentServletMapping()
-          .path("/orders/{id}")
-          .buildAndExpand(order.getId())
-          .toString();
+                .fromCurrentServletMapping()
+                .path("/orders/{id}")
+                .buildAndExpand(order.getId())
+                .toString();
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location", uri);
 
@@ -80,11 +81,11 @@ public class OrderController {
 
     private void validateProductsExistence(List<OrderProductDto> orderProducts) {
         List<OrderProductDto> list = orderProducts
-          .stream()
-          .filter(op -> Objects.isNull(productService.getProduct(op
-            .getProduct()
-            .getId())))
-          .collect(Collectors.toList());
+                .stream()
+                .filter(op -> Objects.isNull(productService.getProduct(op
+                        .getProduct()
+                        .getId())))
+                .collect(Collectors.toList());
 
         if (!CollectionUtils.isEmpty(list)) {
             new ResourceNotFoundException("Product not found");

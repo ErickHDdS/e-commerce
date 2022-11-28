@@ -1,4 +1,4 @@
-package com.qualidade.application.entities;
+package com.qualidade.ecommerce.model;
 
 import java.io.IOException;
 
@@ -8,9 +8,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
-import com.qualidade.application.utils.Address;
+import com.qualidade.ecommerce.utils.Address;
 
 @Entity
 public class User {
@@ -27,6 +29,12 @@ public class User {
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "address_id")
     private Address address;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinTable(name = "user_order", joinColumns = {
+            @JoinColumn(name = "user_id", referencedColumnName = "id") }, inverseJoinColumns = {
+                    @JoinColumn(name = "order_id", referencedColumnName = "id") })
+    private Order order;
 
     public User(String name, int identification, String type, String login,
             int cep, int number, String complement) throws IOException {
@@ -89,6 +97,14 @@ public class User {
     public String toString() {
         return "User{" + "id=" + id + ", name=" + name + ", login=" + login + " , pwd=" + password + ", rua="
                 + address.getStreet() + '}';
+    }
+
+    public Order getOrder() {
+        return this.order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
 }

@@ -1,4 +1,4 @@
-package com.qualidade.application.utils;
+package com.qualidade.ecommerce.utils;
 
 import java.io.IOException;
 

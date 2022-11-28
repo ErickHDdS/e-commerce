@@ -1,7 +1,8 @@
-package com.qualidade.application.controllers;
+package com.qualidade.ecommerce.controller;
 
-import com.qualidade.application.entities.User;
-import com.qualidade.application.repositories.UserRepository;
+import com.qualidade.ecommerce.model.User;
+import com.qualidade.ecommerce.repository.UserRepository;
+
 import java.util.List;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

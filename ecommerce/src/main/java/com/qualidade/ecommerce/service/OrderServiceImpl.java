@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.qualidade.ecommerce.exception.ResourceNotFoundException;
 import com.qualidade.ecommerce.model.Order;
 import com.qualidade.ecommerce.repository.OrderRepository;
 
@@ -16,6 +17,13 @@ public class OrderServiceImpl implements OrderService {
 
     public OrderServiceImpl(OrderRepository orderRepository) {
         this.orderRepository = orderRepository;
+    }
+
+    @Override
+    public Order getOrder(long id) {
+        return orderRepository
+                .findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Order not found"));
     }
 
     @Override

@@ -11,7 +11,6 @@ import com.qualidade.ecommerce.model.Order;
 import com.qualidade.ecommerce.model.OrderProduct;
 import com.qualidade.ecommerce.model.Product;
 import com.qualidade.ecommerce.model.User;
-// import com.qualidade.ecommerce.model.UserOrder;
 import com.qualidade.ecommerce.service.OrderProductService;
 import com.qualidade.ecommerce.service.OrderService;
 import com.qualidade.ecommerce.service.ProductService;
@@ -53,12 +52,6 @@ public class EcommerceApplication {
                     .create(new OrderProduct(orderService.create(new Order()),
                             productService.getProduct(3L), 3));
 
-            // userOrderService.create(new UserOrder(userService.getUser(1L),
-            // orderService.getOrder(1L)));
-            // userOrderService.create(new UserOrder(userService.getUser(3L),
-            // orderService.getOrder(2L)));
-            // userOrderService.create(new UserOrder(userService.getUser(5L),
-            // orderService.getOrder(3L)));
         };
     }
 }

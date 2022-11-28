@@ -7,7 +7,6 @@ import javax.validation.constraints.NotNull;
 import org.springframework.validation.annotation.Validated;
 
 import com.qualidade.ecommerce.model.Order;
-import com.qualidade.ecommerce.model.User;
 
 @Validated
 public interface OrderService {

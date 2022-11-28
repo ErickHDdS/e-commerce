@@ -6,7 +6,7 @@ This project consists of providing a general e-commerce application.
 
 ## Installation
 
-### Prerequisites
+### Pre-requisites
 
 1. [Java](https://www.java.com/pt-BR/)
 

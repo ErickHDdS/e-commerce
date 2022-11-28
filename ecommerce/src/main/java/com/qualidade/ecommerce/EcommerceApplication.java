@@ -11,10 +11,11 @@ import com.qualidade.ecommerce.model.Order;
 import com.qualidade.ecommerce.model.OrderProduct;
 import com.qualidade.ecommerce.model.Product;
 import com.qualidade.ecommerce.model.User;
+import com.qualidade.ecommerce.model.UserOrder;
 import com.qualidade.ecommerce.service.OrderProductService;
 import com.qualidade.ecommerce.service.OrderService;
 import com.qualidade.ecommerce.service.ProductService;
-// import com.qualidade.ecommerce.service.UserOrderService;
+import com.qualidade.ecommerce.service.UserOrderService;
 import com.qualidade.ecommerce.service.UserService;
 
 @SpringBootApplication
@@ -26,7 +27,7 @@ public class EcommerceApplication {
 
     @Bean
     CommandLineRunner runner(ProductService productService, OrderService orderService,
-            OrderProductService orderProductService, UserService userService) {
+            OrderProductService orderProductService, UserService userService, UserOrderService userOrderService) {
         return args -> {
             ArrayList<User> users = new ArrayList<>();
             users.add(new User("Erick", 123, "admin", "erk", 31720560, 10, "casa"));
@@ -35,7 +36,6 @@ public class EcommerceApplication {
 
             users.forEach(user -> {
                 userService.save(user);
-
             });
 
             productService.save(new Product("TV", 300.00, "Samsung 50 Polegadas"));
@@ -51,6 +51,10 @@ public class EcommerceApplication {
             orderProductService
                     .create(new OrderProduct(orderService.create(new Order()),
                             productService.getProduct(3L), 3));
+
+            userOrderService.create(new UserOrder(userService.getUser(1L), orderService.getOrder(1L)));
+            userOrderService.create(new UserOrder(userService.getUser(3L), orderService.getOrder(2L)));
+            userOrderService.create(new UserOrder(userService.getUser(5L), orderService.getOrder(3L)));
 
         };
     }

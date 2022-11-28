@@ -30,7 +30,7 @@ public class Order {
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dateCreated;
 
-    private OrderStatus status;
+    private String status = OrderStatus.PENDING.name();
 
     @OneToMany(mappedBy = "pk.order")
     @Valid
@@ -66,11 +66,11 @@ public class Order {
         this.dateCreated = dateCreated;
     }
 
-    public OrderStatus getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(OrderStatus status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

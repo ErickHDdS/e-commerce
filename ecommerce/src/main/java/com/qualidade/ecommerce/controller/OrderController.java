@@ -23,7 +23,6 @@ import com.qualidade.ecommerce.dto.OrderProductDto;
 import com.qualidade.ecommerce.exception.ResourceNotFoundException;
 import com.qualidade.ecommerce.model.Order;
 import com.qualidade.ecommerce.model.OrderProduct;
-import com.qualidade.ecommerce.model.OrderStatus;
 import com.qualidade.ecommerce.model.User;
 import com.qualidade.ecommerce.service.OrderProductService;
 import com.qualidade.ecommerce.service.OrderService;
@@ -55,8 +54,6 @@ public class OrderController {
         List<OrderProductDto> formDtos = form.getProductOrders();
         validateProductsExistence(formDtos);
         Order order = new Order();
-        order.setStatus(OrderStatus.PAID);
-        order.setUser(form.getUser());
         order = this.orderService.create(order);
 
         List<OrderProduct> orderProducts = new ArrayList<>();

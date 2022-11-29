@@ -4,8 +4,8 @@ Projeto realizado para a disciplina de Qualidade de Software, ministrado pela Pr
 O objetivo do projeto é apresentar um e-commerce simples e funcional, e principalmente respeitar os princípios de Qualidade de Software.
 
 ## Links Importantes
-- [Diagrama Final](https://github.com/ErickHDdS/e-coomerce/blob/main/uml_diagram_pdf_v_1_1.pdf)
-- [Tópicos de Qualidade de Software Abordados no Projeto](https://github.com/ErickHDdS/e-coomerce/tree/main/ecommerce/src)
+- [Diagrama Final](https://github.com/ErickHDdS/e-commerce/blob/main/uml_diagram_pdf_v_1_1.pdf)
+- [Tópicos de Qualidade de Software Abordados no Projeto](https://github.com/ErickHDdS/e-commerce/tree/main/ecommerce/src)
 
 ## Funcionalidades 
 

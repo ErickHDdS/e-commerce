@@ -1,32 +1,45 @@
-# e-coomerce
+# Projeto E-Commerce Qualidade de Software
 
-## About project
+Projeto realizado para a disciplina de Qualidade de Software, ministrado pela Professora Kecia Ferreira no CEFET-MG.
+O objetivo do projeto é apresentar um e-commerce simples e funcional, e principalmente respeitar os princípios de Qualidade de Software.
 
-This project consists of providing a general e-commerce application.
+Diagrama Final: https://github.com/ErickHDdS/e-coomerce/blob/main/uml_diagram_pdf_v_1_1.pdf
 
-## Installation
+## Funcionalidades 
 
-> All dependencies for this project are linked to Maven
+- Criar Usuários
+- Listar todos os Usuários
+- Criar Produtos
+- Listar todos os Produtos
+- Criar um Pedido com Produtos para um Usuário
 
-## Pre-requisites
+## Pré-Requisitos - Execução
 
 1. [Java JDK](https://www.oracle.com/br/java/)
 2. [Java JRE](https://www.java.com/pt-BR/)
+3. [Maven](https://maven.apache.org/)
 
-> Make sure your java version is equal to or greater than Java SE Development Kit 19.0.1
+## Passo a Passo - Execução
 
-## How to run the tests
+1. Clonar o Repositório através do terminal
+   ```
+   git clone https://github.com/ErickHDdS/e-coomerce
+   ```
+2. Entrar na pasta clonada
+   ```
+   cd e-coomerce/ecommerce
+   ```
+3. Executar o programa
+   ```
+   mvn spring-boot:run
+   ```
+4. Acesse o Banco de Dados para validar os cadastros realizados
+   - http://localhost:8080/h2-console
+   - **JDBC URL**: jdbc:h2:mem:ecommercedb 
+   - **USER**: sa
+   - **SENHA**: vazio
 
-1. Execute the aplication
-2. [Access the "database"](http://localhost:8080/h2-console/)
-   - Using **jdbc:h2:mem:ecommercedb** as JDBC URL
-   - Using user **sa** with no password.
-
-## Legal Information
-
-This project is protected by [copyright law](https://en.wikipedia.org/wiki/Copyright) making your copy or distribution illegal.
-
-## Developed by
+## Desenvolvedores
 
 [Erick Henrique](https://github.com/ErickHDdS) <br />
 [Júlia Nunes](https://github.com/Julia-Nunes) <br />

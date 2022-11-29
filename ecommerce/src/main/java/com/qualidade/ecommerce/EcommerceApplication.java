@@ -29,29 +29,25 @@ public class EcommerceApplication {
     CommandLineRunner runner(ProductService productService, OrderService orderService,
             OrderProductService orderProductService, UserService userService, UserOrderService userOrderService) {
         return args -> {
+            
+            //criação dos usuários
             ArrayList<User> users = new ArrayList<>();
             users.add(new User("Erick", 123, "admin", "erk", 31720560, 10, "casa"));
             users.add(new User("Gabriel", 125, "admin", "gbr", 30532000, 30, "ap 302"));
             users.add(new User("Julia", 124, "admin", "jla", 31320350, 20, "fundos"));
+            users.forEach(user -> {userService.save(user);});
 
-            users.forEach(user -> {
-                userService.save(user);
-            });
-
+            //criação dos produtos
             productService.save(new Product("TV", 300.00, "Samsung 50 Polegadas"));
             productService.save(new Product("Celular", 200.00, "iPhone 14 PRO 256GB"));
             productService.save(new Product("Notebook", 100.00, "Acer i5"));
 
-            orderProductService
-                    .create(new OrderProduct(orderService.create(new Order()),
-                            productService.getProduct(1L), 1));
-            orderProductService
-                    .create(new OrderProduct(orderService.create(new Order()),
-                            productService.getProduct(2L), 2));
-            orderProductService
-                    .create(new OrderProduct(orderService.create(new Order()),
-                            productService.getProduct(3L), 3));
+            //criação de pedidos
+            orderProductService.create(new OrderProduct(orderService.create(new Order()), productService.getProduct(1L), 1));
+            orderProductService.create(new OrderProduct(orderService.create(new Order()), productService.getProduct(2L), 2));
+            orderProductService.create(new OrderProduct(orderService.create(new Order()), productService.getProduct(3L), 3));
 
+            //vínculo de pedido-usuário
             userOrderService.create(new UserOrder(userService.getUser(1L), orderService.getOrder(1L)));
             userOrderService.create(new UserOrder(userService.getUser(3L), orderService.getOrder(2L)));
             userOrderService.create(new UserOrder(userService.getUser(5L), orderService.getOrder(3L)));

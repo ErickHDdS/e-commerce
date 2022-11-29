@@ -3,7 +3,9 @@
 Projeto realizado para a disciplina de Qualidade de Software, ministrado pela Professora Kecia Ferreira no CEFET-MG.
 O objetivo do projeto é apresentar um e-commerce simples e funcional, e principalmente respeitar os princípios de Qualidade de Software.
 
-Diagrama Final: https://github.com/ErickHDdS/e-coomerce/blob/main/uml_diagram_pdf_v_1_1.pdf
+## Links Importantes
+- [Diagrama Final](https://github.com/ErickHDdS/e-coomerce/blob/main/uml_diagram_pdf_v_1_1.pdf)
+- [Tópicos de Qualidade de Software Abordados no Projeto](https://github.com/ErickHDdS/e-coomerce/tree/main/ecommerce/src)
 
 ## Funcionalidades 
 
